@@ -11,10 +11,27 @@
         - Dalam constractor kita biasanya membuat property baik itu berisi value ataupun function
         - di dalam constructor, kita bisa memanggil constructor lain, dengan begitu kita bisa mewarisi
         semua property yang dibuat di constructor lain tersebut.
-        - untuk memanggil constructor lain, kita bisa mengunakan NamaConstructor.call(this.parameter)
+        - untuk memanggil constructor lain, kita bisa mengunakan NamaConstructor.call(this, parameter)
      -->
     <script>
-        
+        function Employee(firstName) {
+            this.firstName = firstName;
+            this.sayHello = function (name) {
+                console.log(`Hallo ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        function Manager(firstName, lastName) {
+            this.lastName =lastName;
+            Employee.call(this, firstName);
+        }
+
+        const rahman = new Manager("Rahman", "Al-Imron");
+        console.log(rahman);
+
+        // const rizal = new Employee("Ahmad");
+        // console.log(rizal)
+        // rizal.sayHello("rahman");
     </script>
 </body>
 </html>

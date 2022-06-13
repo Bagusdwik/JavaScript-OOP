@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+
+    <script>
+        function OrangOrang(firstName, lastName) {
+            this.firstName =  firstName;
+            this.lastName = lastName;
+            this.sayHello = function (name) {
+                console.log(`Hello ${name}, my name is ${this.firstName} `);
+            }
+        }
+
+        // menambahkan property pada prototype
+        OrangOrang.prototype.bye = function () {
+            console.info("See you");
+        }
+        OrangOrang.prototype.meet = function () {
+            console.info("Assalamualaikum " + this.firstName);
+        }
+
+        const bagus = new OrangOrang("Bagus Dwi", "Kurniawan");
+        bagus.meet();
+        
+        const nasa = new OrangOrang("Naili", "Sa'adah");
+
+        console.log(bagus);
+        console.log(nasa);
+
+        
+    </script>
+</body>
+</html>
