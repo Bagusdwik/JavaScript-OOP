@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Method</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(firstName, lastName){
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+            sayHello(firstName, lastName){
+                console.info(`Halo ${nama.firstName} ${nama.lastName}`);
+            }
+        }
+        const nama = new Person("Bagus", "Kurniawan");
+        console.log(nama); //Person {firstName: 'Bagus', lastName: 'Kurniawan'}
+
+        console.log(`Halo ${nama.firstName} ${nama.lastName}`); //Halo Bagus Kurniawan
+    </script>
+</body>
+</html>
