@@ -7,7 +7,42 @@
     <title>Class Property</title>
 </head>
 <body>
+    <!-- 
+        Property adalah atribut dari sebuah objek, property sendiri dapat berupa tipe data primitive
+        bahkan bisa juga berbentuk object dan fungsi. Misalkan isi pesan, list penerima, data pengirim, perintah kirim, dll.
+
+        Dalam OOP sendiri, properti dibagi menjadi 2:
+
+        - Internal interface : method dan property yang dapat diakses oleh method lain namun tidak bisa diambil/dijalankan di luar kelas tersebut.
+        - External interface : method dan property yang dapat diakses di luar kelas itu sendiri.
+     -->
     <script>
+        // cara 1
+        class Mail {
+            constructor() {
+                this.from = 'pengirim@dicoding.com';
+                this.contacts = [];
+                this.yourOtherProperty = 'the values';
+            }
+            sendMessage(msg, to) {
+                console.log(`you send: ${msg} to ${to} from ${this.from}`);
+                this.contacts.push(to); // menyimpan kontak baru
+            };
+        }
+ 
+        // cara 2
+        function Mail() {
+            this.from = 'pengirim@dicoding.com';
+            this.contacts = [];
+            this.yourOtherPrototype = 'the values';
+        };
+        
+        Mail.prototype.sendMessage = function (msg, to) {
+            console.log(`you send: ${msg} to  ${to} from ${this.from}`);
+            this.contacts.push(to); // menyimpan kontak baru
+        };
+
+
         class Person{
             constructor(firstName, lastName){
                 this.firstName = firstName;
