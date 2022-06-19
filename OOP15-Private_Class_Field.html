@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Class Field</title>
+</head>
+<body>
+    <!-- 
+        - secara default. saat kita menambahan field, maka field tersebut bisa diakses dari manak]pun
+        - jika kita ingin membuat field yang bersifat private (hanya bisa diakses di dalam class), maka 
+        kita bisa menggunakan tanda # sebelum nama fieldnya
+        contoh : #firstName;
+
+     -->
+    <script>
+        class Person{
+            firstName = "Bagus";
+            lastName = "Kurniawan";
+            #gender = 1;
+
+            constructor(skin, hair){
+                this.skin = skin;
+                this.hair = hair;
+            }
+
+            sayHello(){
+
+            }
+        }
+
+        const bagus = new Person("Coklat", "Black");
+        bagus.gender = 2; //mencoba merubah field yang diprivate
+        console.info(bagus);
+
+        /*
+        field firstName, lastName berada pada kondisi public.
+        field gender berada pada kondisi private. yang berarti tidak bisa diakses dari luar
+        jika field tidak diberi inputan data maka field mempunyai nilai undefined
+
+
+        Output:
+        Person {firstName: 'Bagus', lastName: 'Kurniawan', gender: 1, skin: 'Coklat', hair: 'Black'}
+        */
+    </script>
+</body>
+</html>

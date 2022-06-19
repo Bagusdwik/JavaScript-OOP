@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class: Publlic Field</title>
+</head>
+<body>
+    <script>
+        class Person{
+            firstName = "Bagus";
+            lastName = "Kurniawan";
+            gender = 1;
+
+            constructor(skin, hair){
+                this.skin = skin;
+                this.hair = hair;
+            }
+
+            sayHello(){
+
+            }
+        }
+
+        const bagus = new Person("Coklat", "Black");
+        console.info(bagus);
+
+        /*
+        field firstName, lastName, dan gender berada pada kondisi public.
+        jika field tidak diberi inputan data maka field mempunyai nilai undefined
+
+
+        Output:
+        Person {firstName: 'Bagus', lastName: 'Kurniawan', gender: 1, skin: 'Coklat', hair: 'Black'}
+        */
+    </script>
+</body>
+</html>

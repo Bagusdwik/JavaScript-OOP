@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Instanceof</title>
+</head>
+<body>
+    <script>
+        class manusia{
+
+        }
+
+        class hewan{
+
+        }
+
+        const berakal = new manusia();
+        const takBerakal = new hewan();
+
+        console.log(berakal instanceof manusia); //true
+        console.log(takBerakal instanceof manusia); //false
+        console.log(berakal instanceof hewan); //false
+        console.log(takBerakal instanceof hewan); //true
+
+
+        // Operator Instanceof di Inheritance
+        class Manager{
+
+        }
+        class Employee extends Manager{
+
+        }
+
+        const agung = new Manager();
+        const budi = new Employee();
+
+        console.log(agung instanceof Manager); //true
+        console.log(budi instanceof Manager); //true
+    </script>
+</body>
+</html>
