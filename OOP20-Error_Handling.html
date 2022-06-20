@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+        class error{
+            
+            static meCount(...number){
+                if (number == 0) {
+                    throw new Error("Nomor tidak boleh kosong");
+                }
+
+                let hitung = 0;
+                for (const iterator of number) {
+                    hitung += iterator;
+                }
+                return hitung;
+            }
+        }
+
+        try {
+            console.log(error.meCount());
+            console.log("Selesai");
+        } catch (error) {
+            console.log(`Terjadi error: ${error.message}`); //Terjadi error: Nomor tidak boleh kosong
+        } finally {
+            console.log("Program Selesai");
+        }
+    </script>
+</body>
+</html>
